@@ -220,13 +220,24 @@ function renderFavorites() {
 async function copyQuote() {
     if (!curQuote) return;
 
+    let ok = false;
+
+    // แผน A: วิธีใหม่
     try {
-        await navigator.clipboard.writeText(curQuote.text);
-        copyBtn.textContent = "คัดลอกแล้ว ✓";
+        if (navigator.clipboard) {
+            await navigator.clipboard.writeText(curQuote.text);
+            ok = true;
+        }
     } catch (error) {
-        console.error("คัดลอกไม่สำเร็จ:", error);
-        copyBtn.textContent = "คัดลอกไม่ได้";
+        console.warn("คัดลอกแบบใหม่ไม่ได้ ลองแบบสำรอง:", error);
     }
+
+    // แผน B: ถ้าแผน A ไม่สำเร็จ
+    if (!ok) {
+        ok = fallbackCopy(curQuote.text);
+    }
+
+    copyBtn.textContent = ok ? "คัดลอกแล้ว ✓" : "คัดลอกไม่ได้";
 
     setTimeout(() => {
         copyBtn.textContent = "คัดลอก";
