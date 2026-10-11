@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <title>คำคมท้ายรถ</title>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>คำคมท้ายรถ</h1>
+        <div id="categories">
+        </div>
+        <div>
+            <p class="quote" id="quote">กำลังโหลดคำคม...</p>
+            <canvas id="sticker" width="1080" height="1080"></canvas>
+        </div>
+        <div>
+            <button id="download-btn">ดาวน์โหลดสติ๊กเกอร์</button>
+            <button id="random-btn">สุ่มคำคม 🎲</button>
+            <button id="fav-btn" class="fav-btn" aria-label="บันทึกเป็นคำคมโปรด">♡</button>
+            <button id="copy-btn" class="copy-btn">คัดลอก</button>
+        </div>
+        <section class="favorites">
+            <h2>คำคมโปรดของฉัน <span id="fav-count">(0)</span></h2>
+            <ul id="fav-list"></ul>
+        </section>
+    </body>
+</html>

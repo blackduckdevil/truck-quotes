@@ -1,0 +1,101 @@
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Kanit', Arial, sans-serif;
+}
+
+.quote-card {
+    background-color: #ffd400;
+    color: #c8102e;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 350px;
+    padding: 32px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    border: 4px solid white;
+    border-radius: 12px; 
+}
+
+.quote-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.red {
+    background-color: #c8102e;
+    color: #ffd400;
+}
+
+#quote {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#quote.hide {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#sticker {
+    width: 100%;
+    max-width: 360px;
+}
+
+.cat-btn.active {
+    color: white;
+    background-color: #1a1a1a;
+}
+
+.fav-btn {
+    font-size: 1.6rem;
+    background: none;
+    color: #666;
+    border: none;
+    cursor: pointer;
+}
+
+.fav-btn.saved {
+    color: crimson;
+}
+
+.fav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.favorites ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.fav-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+}
+
+.fav-empty {
+    color: #999;
+    font-style: italic;
+}
+
+.fav-text {
+    cursor: pointer;
+}
+
+.fav-text:hover {
+    text-decoration: underline;
+}
